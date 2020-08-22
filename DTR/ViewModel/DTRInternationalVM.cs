@@ -152,6 +152,48 @@ namespace DTR.ViewModel
             set { furtherRouting = value; OnPropertyChanged("FurtherRouting"); }
         }
 
+        private string mks;
+
+        public string Mks
+        {
+            get { return mks; }
+            set { mks = value; OnPropertyChanged("Mks"); }
+        }
+
+        private string pks;
+
+        public string Pks
+        {
+            get { return pks; }
+            set { pks = value; OnPropertyChanged("Pks"); }
+        }
+
+        private string description;
+
+        public string Description
+        {
+            get { return description; }
+            set { description = value; OnPropertyChanged("Description"); }
+        }
+
+        private string grossWeight;
+
+        public string GrossWeight
+        {
+            get { return grossWeight; }
+            set { grossWeight = value; OnPropertyChanged("GrossWeight"); }
+        }
+
+        private string mesurement;
+
+        public string Mesurement
+        {
+            get { return mesurement; }
+            set { mesurement = value; OnPropertyChanged("Mesurement"); }
+        }
+
+
+
 
 
 
@@ -289,6 +331,40 @@ namespace DTR.ViewModel
             {
                 PlacePDF(320, 296, 275, 58, FurtherRouting, gfx, textFormatter, font);
             }
+
+            //particulars table ------------------------------------------------------------------------------------
+            //Mks
+            if (Mks != null)
+            {
+                PlacePDF(16, 387, 100, 150, Mks, gfx, textFormatter, font);
+            }
+
+            //Pks
+            if (Pks != null)
+            {
+                PlacePDF(121, 387, 45, 150, Pks, gfx, textFormatter, font);
+            }
+
+            //Description
+            if (Description != null)
+            {
+                PlacePDF(170, 387, 270, 150, Description, gfx, textFormatter, font);
+            }
+
+            //GrossWeight
+            if (GrossWeight != null)
+            {
+                PlacePDF(448, 387, 73, 150, GrossWeight, gfx, textFormatter, font);
+            }
+
+            //Mesurment
+            if (Mesurement != null)
+            {
+                PlacePDF(528, 387, 58, 150, Mesurement, gfx, textFormatter, font);
+            }
+
+            //Payment table -------------------------------------------------------------------------------------------------------------------
+
 
             inputDocument.Save($"{path}/new.pdf");
             Process.Start($"{path}/new.pdf");

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DTR.ViewModel"
         xmlns:vm="clr-namespace:DTR.ViewModel"
         mc:Ignorable="d"
-        Title="DTRInternationalView" Height="700" Width="800">
+        Title="DTRInternationalView" Height="909.582" Width="800">
 
     <Window.Resources>
         <vm:DTRInternationalVM x:Key="vm"/>
@@ -198,11 +198,11 @@
             <TextBlock Grid.Row="0" Grid.Column="4"
                        Text="Measurement" HorizontalAlignment="Center"/>
 
-            <TextBox Grid.Row="1" Grid.Column="0" AcceptsReturn="True"/>
-            <TextBox Grid.Row="1" Grid.Column="1" AcceptsReturn= "True"/>
-            <TextBox Grid.Row="1" Grid.Column="2" AcceptsReturn= "True"/>
-            <TextBox Grid.Row="1" Grid.Column="3" AcceptsReturn= "True"/>
-            <TextBox Grid.Row="1" Grid.Column="4" AcceptsReturn= "True"/>
+            <TextBox Text="{Binding Mks}" Grid.Row="1" Grid.Column="0" AcceptsReturn="True"/>
+            <TextBox Text="{Binding Pks}" Grid.Row="1" Grid.Column="1" AcceptsReturn= "True"/>
+            <TextBox Text="{Binding Description}" Grid.Row="1" Grid.Column="2" AcceptsReturn= "True"/>
+            <TextBox Text="{Binding GrossWeight}" Grid.Row="1" Grid.Column="3" AcceptsReturn= "True"/>
+            <TextBox Text="{Binding Mesurement}" Grid.Row="1" Grid.Column="4" AcceptsReturn= "True"/>
         </Grid>
         
         
