@@ -167,8 +167,8 @@ namespace DTR.ViewModel
         {
             printCommand = new PrintCommand(this);
             exportCommand = new ExportCommand(this);
-            ShipperExporter = "test\nfdsf";
-            ExportToPdf();
+            //ShipperExporter = "test\nfdsf";
+            //ExportToPdf();
             
         }
 
