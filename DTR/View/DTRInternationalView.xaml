@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DTR.ViewModel"
         xmlns:vm="clr-namespace:DTR.ViewModel"
         mc:Ignorable="d"
-        Title="DTRInternationalView" Height="400" Width="800">
+        Title="DTRInternationalView" Height="904.704" Width="800">
 
     <Window.Resources>
         <vm:DTRInternationalVM x:Key="vm"/>
@@ -244,27 +244,27 @@
 
                 <TextBox Text="{Binding Freight2}" Grid.Row="2" Grid.Column="0"/>
                 <TextBox Text="{Binding Prepaid2}" Grid.Row="2" Grid.Column="1"/>
-                <TextBox Text="{Binding Currency2}" Grid.Row="2" Grid.Column="2"/>
+                <TextBox Text="{Binding Currency2, Mode=TwoWay}" Grid.Row="2" Grid.Column="2"/>
                 <TextBox Text="{Binding Collect2}" Grid.Row="2" Grid.Column="3"/>
-                <TextBox Text="{Binding Currency2}" Grid.Row="2" Grid.Column="4"/>
+                <TextBox Text="{Binding Currency2, Mode=TwoWay}" Grid.Row="2" Grid.Column="4"/>
 
                 <TextBox Text="{Binding Freight3}" Grid.Row="3" Grid.Column="0"/>
                 <TextBox Text="{Binding Prepaid3}" Grid.Row="3" Grid.Column="1"/>
-                <TextBox Text="{Binding Currency3}" Grid.Row="3" Grid.Column="2"/>
+                <TextBox Text="{Binding Currency3, Mode=TwoWay}" Grid.Row="3" Grid.Column="2"/>
                 <TextBox Text="{Binding Collect3}" Grid.Row="3" Grid.Column="3"/>
-                <TextBox Text="{Binding Currency3}" Grid.Row="3" Grid.Column="4"/>
+                <TextBox Text="{Binding Currency3, Mode=TwoWay}" Grid.Row="3" Grid.Column="4"/>
 
                 <TextBox Text="{Binding Freight4}" Grid.Row="4" Grid.Column="0"/>
                 <TextBox Text="{Binding Prepaid4}" Grid.Row="4" Grid.Column="1"/>
-                <TextBox Text="{Binding Currency4}" Grid.Row="4" Grid.Column="2"/>
+                <TextBox Text="{Binding Currency4, Mode=TwoWay}" Grid.Row="4" Grid.Column="2"/>
                 <TextBox Text="{Binding Collect4}" Grid.Row="4" Grid.Column="3"/>
-                <TextBox Text="{Binding Currency4}" Grid.Row="4" Grid.Column="4"/>
+                <TextBox Text="{Binding Currency4, Mode=TwoWay}" Grid.Row="4" Grid.Column="4"/>
 
                 <TextBox Text="{Binding Freight5}" Grid.Row="5" Grid.Column="0"/>
                 <TextBox Text="{Binding Prepaid5}" Grid.Row="5" Grid.Column="1"/>
-                <TextBox Text="{Binding Currency5}" Grid.Row="5" Grid.Column="2"/>
+                <TextBox Text="{Binding Currency5, Mode=TwoWay}" Grid.Row="5" Grid.Column="2"/>
                 <TextBox Text="{Binding Collect5}" Grid.Row="5" Grid.Column="3"/>
-                <TextBox Text="{Binding Currency5}" Grid.Row="5" Grid.Column="4"/>
+                <TextBox Text="{Binding Currency5, Mode=TwoWay}" Grid.Row="5" Grid.Column="4"/>
             
                 <!--Total-->
                 <TextBlock Grid.Row="6" Grid.Column="0"
@@ -278,6 +278,9 @@
 
             <Button Command="{Binding exportCommand}" Grid.Row="12" Grid.Column="2" 
                     Content="Export"/>
+
+            <Button Command="{}" Grid.Row="12" Grid.Column="1" 
+                    Content="Add Shipper" Width="100"/>
 
         </Grid>
     </ScrollViewer>
