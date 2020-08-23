@@ -192,8 +192,95 @@ namespace DTR.ViewModel
             set { mesurement = value; OnPropertyChanged("Mesurement"); }
         }
 
+        //Freight inputs
+        public string Freight1 { get; set; }
+        public string Freight2 { get; set; }
+        public string Freight3 { get; set; }
+        public string Freight4 { get; set; }
+        public string Freight5 { get; set; }
 
 
+        //Prepaid inputs
+        public string Prepaid1 { get; set; }
+        public string Prepaid2 { get; set; }
+        public string Prepaid3 { get; set; }
+        public string Prepaid4 { get; set; }
+        public string Prepaid5 { get; set; }
+
+        //Collect inputs
+        public string Collect1 { get; set; }
+        public string Collect2 { get; set; }
+        public string Collect3 { get; set; }
+        public string Collect4 { get; set; }
+        public string Collect5 { get; set; }
+
+        //currency
+        private string currency1;
+
+        public string Currency1
+        {
+            get { return currency1; }
+            set { currency1 = value; OnPropertyChanged("Currency1"); }
+        }
+
+        private string currency2;
+
+        public string Currency2
+        {
+            get { return currency2; }
+            set { currency2 = value; OnPropertyChanged("Currency1"); }
+        }
+
+        private string currency3;
+
+        public string Currency3
+        {
+            get { return currency3; }
+            set { currency3 = value; OnPropertyChanged("Currency1"); }
+        }
+
+        private string currency4;
+
+        public string Currency4
+        {
+            get { return currency4; }
+            set { currency4 = value; OnPropertyChanged("Currency1"); }
+        }
+
+        private string currency5;
+
+        public string Currency5
+        {
+            get { return currency5; }
+            set { currency5 = value; OnPropertyChanged("Currency1"); }
+        }
+
+        private string currencyTotal;
+
+        public string CurrencyTotal
+        {
+            get { return currencyTotal; }
+            set { currencyTotal = value; OnPropertyChanged("CurrecyTotal"); }
+        }
+
+
+
+        //total
+        private string prepaidTotal;
+
+        public string PrepaidTotal
+        {
+            get { return prepaidTotal; }
+            set { prepaidTotal = value; }
+        }
+
+        private string collectTotal;
+
+        public string CollectTotal
+        {
+            get { return collectTotal; }
+            set { collectTotal = value; OnPropertyChanged("CollectTotal"); }
+        }
 
 
 
@@ -364,6 +451,113 @@ namespace DTR.ViewModel
             }
 
             //Payment table -------------------------------------------------------------------------------------------------------------------
+            //Freight inputs
+            if (Freight1 != null)
+            {
+                PlacePDF(20, 629, 130, 10, Freight1, gfx, textFormatter, font);
+            }
+            if (Freight2 != null)
+            {
+                PlacePDF(20, 642, 130, 10, Freight2, gfx, textFormatter, font);
+            }
+            if (Freight3 != null)
+            {
+                PlacePDF(20, 656, 130, 10, Freight3, gfx, textFormatter, font);
+            }
+            if (Freight4 != null)
+            {
+                PlacePDF(20, 670, 130, 10, Freight4, gfx, textFormatter, font);
+            }
+            if (Freight5 != null)
+            {
+                PlacePDF(20, 684, 130, 10, Freight5, gfx, textFormatter, font);
+            }
+
+            //Prepaid inputs
+            if (Prepaid1 != null)
+            {
+                PlacePDF(155, 629, 38, 10, Prepaid1, gfx, textFormatter, font);
+            }
+            if (Prepaid2 != null)
+            {
+                PlacePDF(155, 642, 38, 10, Prepaid2, gfx, textFormatter, font);
+            }
+            if (Prepaid3 != null)
+            {
+                PlacePDF(155, 656, 38, 10, Prepaid3, gfx, textFormatter, font);
+            }
+            if (Prepaid4 != null)
+            {
+                PlacePDF(155, 670, 38, 10, Prepaid4, gfx, textFormatter, font);
+            }
+            if (Prepaid5 != null)
+            {
+                PlacePDF(155, 684, 38, 10, Prepaid5, gfx, textFormatter, font);
+            }
+
+            //currency input
+            if (Currency1 != null)
+            {
+                PlacePDF(195, 629, 15, 10, Currency1, gfx, textFormatter, font);
+                PlacePDF(253, 629, 15, 10, Currency1, gfx, textFormatter, font);
+            }
+            if (Currency2 != null)
+            {
+                PlacePDF(195, 642, 15, 10, Currency2, gfx, textFormatter, font);
+                PlacePDF(253, 642, 15, 10, Currency1, gfx, textFormatter, font);
+            }
+            if (Currency3 != null)
+            {
+                PlacePDF(195, 656, 15, 10, Currency3, gfx, textFormatter, font);
+                PlacePDF(253, 656, 15, 10, Currency1, gfx, textFormatter, font);
+            }
+            if (Currency4 != null)
+            {
+                PlacePDF(195, 670, 15, 10, Currency4, gfx, textFormatter, font);
+                PlacePDF(253, 670, 15, 10, Currency1, gfx, textFormatter, font);
+            }
+            if (Currency5 != null)
+            {
+                PlacePDF(195, 684, 15, 10, Currency5, gfx, textFormatter, font);
+                PlacePDF(253, 684, 15, 10, Currency1, gfx, textFormatter, font);
+            }
+
+            //Collect input
+            if (Collect1 != null)
+            {
+                PlacePDF(215, 629, 35, 10, Collect1, gfx, textFormatter, font);
+            }
+            if (Collect2 != null)
+            {
+                PlacePDF(215, 642, 35, 10, Collect2, gfx, textFormatter, font);
+            }
+            if (Collect3 != null)
+            {
+                PlacePDF(215, 656, 35, 10, Collect3, gfx, textFormatter, font);
+            }
+            if (Collect4 != null)
+            {
+                PlacePDF(215, 670, 35, 10, Collect4, gfx, textFormatter, font);
+            }
+            if (Collect5 != null)
+            {
+                PlacePDF(215, 684, 35, 10, Collect5, gfx, textFormatter, font);
+            }
+
+            //Total
+            if (PrepaidTotal != null)
+            {
+                PlacePDF(155, 698, 38, 10, PrepaidTotal, gfx, textFormatter, font);
+            }
+            if (CurrencyTotal != null)
+            {
+                PlacePDF(195, 698, 15, 10, CurrencyTotal, gfx, textFormatter, font);
+                PlacePDF(253, 698, 15, 10, CurrencyTotal, gfx, textFormatter, font);
+            }
+            if (CollectTotal != null)
+            {
+                PlacePDF(215, 698, 35, 10, CollectTotal, gfx, textFormatter, font);
+            }
 
 
             inputDocument.Save($"{path}/new.pdf");
