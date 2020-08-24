@@ -1,5 +1,4 @@
-﻿using DTR.View;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,16 +7,15 @@ using System.Windows.Input;
 
 namespace DTR.ViewModel.Commands
 {
-    public class OpenWindowCommand : ICommand
+    public class AddCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
 
-        public DTRInternationalVM DTRvm{ get; set; }
-        public AddShipeprView addShipperView { get; set; }
+        public AddShipperVM addShipperVM {get; set;}
 
-        public OpenWindowCommand(DTRInternationalVM vm)
+        public AddCommand(AddShipperVM vm)
         {
-            DTRvm = vm;
+            addShipperVM = vm;
         }
 
         public bool CanExecute(object parameter)
@@ -27,8 +25,7 @@ namespace DTR.ViewModel.Commands
 
         public void Execute(object parameter)
         {
-            addShipperView = new AddShipeprView();
-            DTRvm.OpenWindow(addShipperView);
+            addShipperVM.AddShipper();
         }
     }
 }

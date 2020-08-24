@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DTR.ViewModel"
         xmlns:vm="clr-namespace:DTR.ViewModel"
         mc:Ignorable="d"
-        Title="DTRInternationalView" Height="904.704" Width="800">
+        Title="DTRInternationalView" Height="400" Width="800">
 
     <Window.Resources>
         <vm:DTRInternationalVM x:Key="vm"/>
@@ -279,7 +279,7 @@
             <Button Command="{Binding exportCommand}" Grid.Row="12" Grid.Column="2" 
                     Content="Export"/>
 
-            <Button Command="{}" Grid.Row="12" Grid.Column="1" 
+            <Button Command="{Binding openWindowCommand}" Grid.Row="12" Grid.Column="1" 
                     Content="Add Shipper" Width="100"/>
 
         </Grid>

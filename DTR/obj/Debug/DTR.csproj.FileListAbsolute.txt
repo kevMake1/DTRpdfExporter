@@ -41,3 +41,5 @@ C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\bin\Debug\Sy
 C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\View\AddShipperView.g.cs
 C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\DTR_Content.g.cs
 C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\View\AddShipperView.baml
+C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\View\DisplayShipperAndCosigneeView.g.cs
+C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\View\DisplayShipperAndCosigneeView.baml

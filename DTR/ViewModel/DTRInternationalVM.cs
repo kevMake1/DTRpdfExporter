@@ -1,4 +1,5 @@
-﻿using DTR.ViewModel.Commands;
+﻿using DTR.View;
+using DTR.ViewModel.Commands;
 using PdfSharp.Drawing;
 using PdfSharp.Drawing.Layout;
 using PdfSharp.Pdf;
@@ -290,12 +291,15 @@ namespace DTR.ViewModel
         //Constructor and Commands -----------------------------------------------------------------------------------------
         public PrintCommand printCommand { get; set; }
         public ExportCommand exportCommand { get; set; }
+        public OpenWindowCommand openWindowCommand { get; set; }
         public XParagraphAlignment XParagraphAlignmentleft { get; private set; }
 
         public DTRInternationalVM()
         {
             printCommand = new PrintCommand(this);
             exportCommand = new ExportCommand(this);
+            openWindowCommand = new OpenWindowCommand(this);
+
             //ShipperExporter = "test\nfdsf";
             //ExportToPdf();
             
@@ -307,6 +311,13 @@ namespace DTR.ViewModel
             Console.WriteLine(ShipperExporter);
             Console.WriteLine("it works");
             ShipperExporter = "fdsf";
+        }
+
+        public void OpenWindow(AddShipeprView addShipperView)
+        {
+            addShipperView.Show();
+            DisplayShipperAndCosigneeView test = new DisplayShipperAndCosigneeView();
+            test.Show();
         }
 
         public void ExportToPdf()
@@ -567,7 +578,7 @@ namespace DTR.ViewModel
         private void PlacePDF(double x, double y, double width, double height, string variable, XGraphics gfx, XTextFormatter textFormatter, XFont font)
         {
             XRect rect = new XRect(x, y, width, height);
-            gfx.DrawRectangle(XBrushes.SeaShell, rect);
+            //gfx.DrawRectangle(XBrushes.SeaShell, rect);
             textFormatter.Alignment = XParagraphAlignment.Left;
             textFormatter.DrawString(variable, font, XBrushes.Black, rect, XStringFormats.TopLeft);
         }
