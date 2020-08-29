@@ -12,5 +12,10 @@ namespace DTR.Model
         [PrimaryKey, AutoIncrement] //sqlite
         public int Id { get; set; }
         public string ShipperInfo { get; set; }
+
+        public override string ToString()
+        {
+            return $"{ShipperInfo}";
+        }
     }
 }

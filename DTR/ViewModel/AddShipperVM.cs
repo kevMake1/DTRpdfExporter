@@ -8,6 +8,7 @@ using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media.Animation;
 
 namespace DTR.ViewModel
@@ -23,9 +24,11 @@ namespace DTR.ViewModel
 
         //Constructor
         public AddCommand addCommand { get; set; }
+
         public AddShipperVM()
         {
             addCommand = new AddCommand(this);
+
         }
 
         private string shipperContent;
@@ -35,15 +38,6 @@ namespace DTR.ViewModel
             get { return shipperContent; }
             set { shipperContent = value; OnPropertyChanged("ShipperContent"); }
         }
-
-        private string  test;
-
-        public string  Test
-        {
-            get { return test; }
-            set { test = value; OnPropertyChanged("Test"); }
-        }
-
 
         public void AddShipper()
         {
@@ -57,7 +51,7 @@ namespace DTR.ViewModel
 
                 //Save to dataBase
                 string databaseName = "Shipper.db";
-                string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                string folderPath = AppDomain.CurrentDomain.BaseDirectory;
                 string databasePath = System.IO.Path.Combine(folderPath, databaseName);
 
                 using (SQLiteConnection connection = new SQLiteConnection(databasePath))
@@ -65,6 +59,8 @@ namespace DTR.ViewModel
                     connection.CreateTable<Shipper>();
                     connection.Insert(shipper);
                 }
+
+                
                 
             }
             

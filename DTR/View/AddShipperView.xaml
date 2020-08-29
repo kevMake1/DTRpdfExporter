@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DTR.View"
         xmlns:vm="clr-namespace:DTR.ViewModel"
         mc:Ignorable="d"
-        Title="AddShipperView" Height="200" Width="400">
+        Title="Add Shipper" Height="200" Width="400">
 
     <Window.Resources>
         <vm:AddShipperVM x:Key="vm" />
@@ -32,6 +32,7 @@
         <TextBox Grid.Column="1" Grid.Row="2"
                  Height="80" AcceptsReturn="True"
                  Text="{Binding ShipperContent}"/>
-        <Button Command="{Binding addCommand}" Content="Add" Grid.Column="1" Grid.Row="3" />
+        <Button Click="Button_Click"
+                Command="{Binding addCommand}" Content="Add" Grid.Column="1" Grid.Row="3" />
     </Grid>
 </Window>

@@ -292,18 +292,27 @@ namespace DTR.ViewModel
         public PrintCommand printCommand { get; set; }
         public ExportCommand exportCommand { get; set; }
         public OpenWindowCommand openWindowCommand { get; set; }
+        public ShowAllCommand showAllCommand { get; set; }
+
+        public OpenCosigneeCommand openCosigneeCommand { get; set; }
         public XParagraphAlignment XParagraphAlignmentleft { get; private set; }
+
+        
 
         public DTRInternationalVM()
         {
             printCommand = new PrintCommand(this);
             exportCommand = new ExportCommand(this);
             openWindowCommand = new OpenWindowCommand(this);
+            showAllCommand = new ShowAllCommand(this);
+            openCosigneeCommand = new OpenCosigneeCommand(this);
 
-            //ShipperExporter = "test\nfdsf";
-            //ExportToPdf();
             
-        }
+
+        //ShipperExporter = "test\nfdsf";
+        //ExportToPdf();
+
+    }
 
         //Methods ------------------------------------------------------------------------------------------
         public void PrintToConsole() //debug
@@ -316,20 +325,29 @@ namespace DTR.ViewModel
         public void OpenWindow(AddShipeprView addShipperView)
         {
             addShipperView.Show();
-            DisplayShipperAndCosigneeView test = new DisplayShipperAndCosigneeView();
-            test.Show();
+        }
+
+        public void OpenWindow(DisplayShipperAndCosigneeView displayShipperView)
+        {
+            displayShipperView.ShowDialog();
+        }
+
+        public void OpenCosigneeView()
+        {
+            AddCosigneeView cosigneeView = new AddCosigneeView();
+            cosigneeView.ShowDialog();
         }
 
         public void ExportToPdf()
         {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string path = AppDomain.CurrentDomain.BaseDirectory;
 
             PdfDocument outputDocument = new PdfDocument();
             PdfDocument inputDocument = PdfReader.Open($"{path}/HBL2.pdf", PdfDocumentOpenMode.Modify);
 
             PdfPage page = inputDocument.Pages[0];
             XGraphics gfx = XGraphics.FromPdfPage(page);
-            XFont font = new XFont("Verdana", 8);
+            XFont font = new XFont("Arial", 9);
             XTextFormatter textFormatter = new XTextFormatter(gfx);
 
 
@@ -571,8 +589,25 @@ namespace DTR.ViewModel
             }
 
 
-            inputDocument.Save($"{path}/new.pdf");
-            Process.Start($"{path}/new.pdf");
+            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+            dlg.FileName = "Document"; // Default file name
+            dlg.DefaultExt = ".pdf"; // Default file extension
+            dlg.Filter = "Text documents (.pdf)|*.pdf"; // Filter files by extension
+
+            // Show save file dialog box
+            Nullable<bool> result = dlg.ShowDialog();
+
+            // Process save file dialog box results
+            if (result == true)
+            {
+                // Save document
+                string filename = dlg.FileName;
+                inputDocument.Save(filename);
+                
+            }
+
+            //inputDocument.Save($"{AppDomain.CurrentDomain.BaseDirectory}/new.pdf");
+            //Process.Start($"{AppDomain.CurrentDomain.BaseDirectory}/new.pdf");
         }
 
         private void PlacePDF(double x, double y, double width, double height, string variable, XGraphics gfx, XTextFormatter textFormatter, XFont font)
