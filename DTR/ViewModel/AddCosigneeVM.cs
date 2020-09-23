@@ -1,6 +1,5 @@
 ﻿using DTR.Model;
 using DTR.ViewModel.Commands;
-using SQLite;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,12 +47,6 @@ namespace DTR.ViewModel
                 string databaseName = "Cosignee.db";
                 string folderPath = AppDomain.CurrentDomain.BaseDirectory;
                 string databasePath = System.IO.Path.Combine(folderPath, databaseName);
-
-                using (SQLiteConnection connection = new SQLiteConnection(databasePath))
-                {
-                    connection.CreateTable<Cosignee>();
-                    connection.Insert(cosignee);
-                }
 
 
 

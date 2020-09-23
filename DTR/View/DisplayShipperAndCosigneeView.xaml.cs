@@ -42,16 +42,9 @@ namespace DTR.View
 
             List<Shipper> shippers;
 
-            using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(databasePath))
-            {
-                conn.CreateTable<Shipper>();
-                shippers = conn.Table<Shipper>().ToList();
-            }
 
-            if(shippers != null)
-            {
-                ShipperView.ItemsSource = shippers;
-            }
+
+
         }
 
         void ReadCosigneeDatabase()
@@ -62,16 +55,8 @@ namespace DTR.View
 
             List<Cosignee> cosignees;
 
-            using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(databasePath))
-            {
-                conn.CreateTable<Cosignee>();
-                cosignees = conn.Table<Cosignee>().ToList();
-            }
 
-            if (cosignees != null)
-            {
-                CosigneeView.ItemsSource = cosignees;
-            }
+
         }
 
         private void Shipper_SelectionChanged(object sender, SelectionChangedEventArgs e)

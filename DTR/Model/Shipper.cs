@@ -1,5 +1,4 @@
-﻿using SQLite;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +8,7 @@ namespace DTR.Model
 {
     public class Shipper
     {
-        [PrimaryKey, AutoIncrement] //sqlite
+        //[PrimaryKey, AutoIncrement] sqlite
         public int Id { get; set; }
         public string ShipperInfo { get; set; }
 

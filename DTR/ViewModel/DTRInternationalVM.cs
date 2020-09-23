@@ -339,7 +339,8 @@ namespace DTR.ViewModel
 
         public void ExportToPdf()
         {
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            //string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string path = System.AppDomain.CurrentDomain.BaseDirectory;
 
             PdfDocument outputDocument = new PdfDocument();
             PdfDocument inputDocument = PdfReader.Open($"{path}/HBL2.pdf", PdfDocumentOpenMode.Modify);

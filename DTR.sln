@@ -17,6 +17,8 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup10", "Setup10\Setup10.
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup11", "Setup11\Setup11.vdproj", "{9DBEAFE1-FEDD-4528-8176-0C435D416C6A}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup12", "Setup12\Setup12.vdproj", "{3AA4092E-DCD8-43BC-AA1D-0B47F835A0F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,8 @@ Global
 		{720ADC15-07CF-4012-B400-D28DA9B5F4BD}.Release|Any CPU.ActiveCfg = Release
 		{9DBEAFE1-FEDD-4528-8176-0C435D416C6A}.Debug|Any CPU.ActiveCfg = Debug
 		{9DBEAFE1-FEDD-4528-8176-0C435D416C6A}.Release|Any CPU.ActiveCfg = Release
+		{3AA4092E-DCD8-43BC-AA1D-0B47F835A0F0}.Debug|Any CPU.ActiveCfg = Debug
+		{3AA4092E-DCD8-43BC-AA1D-0B47F835A0F0}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

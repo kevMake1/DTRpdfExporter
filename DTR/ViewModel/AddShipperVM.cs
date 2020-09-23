@@ -1,6 +1,5 @@
 ﻿using DTR.Model;
 using DTR.ViewModel.Commands;
-using SQLite;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,12 +53,6 @@ namespace DTR.ViewModel
                 string databaseName = "Shipper.db";
                 string folderPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
                 string databasePath = System.IO.Path.Combine(folderPath, databaseName);
-
-                using (SQLiteConnection connection = new SQLiteConnection(databasePath))
-                {
-                    connection.CreateTable<Shipper>();
-                    connection.Insert(shipper);
-                }
 
                 
                 

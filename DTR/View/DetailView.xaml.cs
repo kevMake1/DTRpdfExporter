@@ -1,5 +1,4 @@
 ﻿using DTR.Model;
-using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,11 +36,6 @@ namespace DTR.View
             string folderPath = AppDomain.CurrentDomain.BaseDirectory;
             string databasePath = System.IO.Path.Combine(folderPath, databaseName);
 
-            using (SQLiteConnection connection = new SQLiteConnection(databasePath))
-            {
-                connection.CreateTable<Shipper>();
-                connection.Delete(selectedShipper);
-            }
 
             Close();
         }
@@ -52,12 +46,6 @@ namespace DTR.View
             string folderPath = AppDomain.CurrentDomain.BaseDirectory;
             string databasePath = System.IO.Path.Combine(folderPath, databaseName);
 
-            using (SQLiteConnection connection = new SQLiteConnection(databasePath))
-            {
-                connection.CreateTable<Shipper>();
-                selectedShipper.ShipperInfo = infoBox.Text;
-                connection.Update(selectedShipper);
-            }
 
             Close();
         }
