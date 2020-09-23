@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -307,19 +308,17 @@ namespace DTR.ViewModel
             showAllCommand = new ShowAllCommand(this);
             openCosigneeCommand = new OpenCosigneeCommand(this);
 
-            
+            //ShipperExporter = "test\nfdsf";
+            //ExportToPdf();
 
-        //ShipperExporter = "test\nfdsf";
-        //ExportToPdf();
-
-    }
+        }
 
         //Methods ------------------------------------------------------------------------------------------
         public void PrintToConsole() //debug
         {
             Console.WriteLine(ShipperExporter);
             Console.WriteLine("it works");
-            ShipperExporter = "fdsf";
+           
         }
 
         public void OpenWindow(AddShipeprView addShipperView)
@@ -340,7 +339,7 @@ namespace DTR.ViewModel
 
         public void ExportToPdf()
         {
-            string path = AppDomain.CurrentDomain.BaseDirectory;
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
             PdfDocument outputDocument = new PdfDocument();
             PdfDocument inputDocument = PdfReader.Open($"{path}/HBL2.pdf", PdfDocumentOpenMode.Modify);

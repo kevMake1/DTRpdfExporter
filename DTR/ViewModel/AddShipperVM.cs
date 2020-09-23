@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Design;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,7 +52,7 @@ namespace DTR.ViewModel
 
                 //Save to dataBase
                 string databaseName = "Shipper.db";
-                string folderPath = AppDomain.CurrentDomain.BaseDirectory;
+                string folderPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
                 string databasePath = System.IO.Path.Combine(folderPath, databaseName);
 
                 using (SQLiteConnection connection = new SQLiteConnection(databasePath))
