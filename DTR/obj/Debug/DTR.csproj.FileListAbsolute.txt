@@ -1,7 +1,6 @@
 C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\bin\Debug\DTR.exe.config
 C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\bin\Debug\DTR.exe
 C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\bin\Debug\DTR.pdb
-C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\DTR.csprojAssemblyReference.cache
 C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\View\DTRInternationalView.g.cs
 C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\App.g.cs
 C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\DTR_MarkupCompile.cache
@@ -49,3 +48,4 @@ C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\Vi
 C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\View\AddCosigneeView.baml
 C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\View\DetailView2.g.cs
 C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\View\DetailView2.baml
+C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\DTR.csprojAssemblyReference.cache

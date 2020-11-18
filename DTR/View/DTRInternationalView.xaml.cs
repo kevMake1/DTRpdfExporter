@@ -32,7 +32,9 @@ namespace DTR.View
             shippers = new List<Shipper>();
             cosignees = new List<Cosignee>();
             ReadShipperDatabase();
-            ReadCosigneeDatabase();
+            //ReadCosigneeDatabase();
+
+           
 
         }
 
@@ -46,6 +48,7 @@ namespace DTR.View
         {
             string databaseName = "Shipper.db";
             string folderPath = AppDomain.CurrentDomain.BaseDirectory;
+            //string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             string databasePath = System.IO.Path.Combine(folderPath, databaseName);
 
             using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(databasePath))

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTR", "DTR\DTR.csproj", "{9
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{103C7929-7F89-4D6B-A2F0-6A7159CD28F6}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup2", "Setup2\Setup2.vdproj", "{13320599-0723-400D-AF38-567F92C30207}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,8 @@ Global
 		{91FAEB0E-1553-493F-A2AF-D851E57EA85A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{103C7929-7F89-4D6B-A2F0-6A7159CD28F6}.Debug|Any CPU.ActiveCfg = Debug
 		{103C7929-7F89-4D6B-A2F0-6A7159CD28F6}.Release|Any CPU.ActiveCfg = Release
+		{13320599-0723-400D-AF38-567F92C30207}.Debug|Any CPU.ActiveCfg = Debug
+		{13320599-0723-400D-AF38-567F92C30207}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
