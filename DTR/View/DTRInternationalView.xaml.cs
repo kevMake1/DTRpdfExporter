@@ -31,8 +31,18 @@ namespace DTR.View
 
             shippers = new List<Shipper>();
             cosignees = new List<Cosignee>();
-            ReadShipperDatabase();
-            ReadCosigneeDatabase();
+
+
+            try
+            {
+                ReadShipperDatabase();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            
+            //ReadCosigneeDatabase();
 
         }
 
