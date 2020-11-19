@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\App.xaml
-61901068008
+8-1445309709
 3-344124972
-25-399801708
+27-1951705606
 28-1758003288
-View\AddCosigneeView.xaml;View\AddShipperView.xaml;View\DetailView.xaml;View\DetailView2.xaml;View\DisplayShipperAndCosigneeView.xaml;View\DTRInternationalView.xaml;
+View\AddCosigneeView.xaml;View\AddShipperView.xaml;View\BillOfLandingView.xaml;View\DetailView.xaml;View\DetailView2.xaml;View\DisplayShipperAndCosigneeView.xaml;View\DTRInternationalView.xaml;View\HomeView.xaml;
 
 False
 

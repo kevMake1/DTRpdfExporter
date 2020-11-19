@@ -50,3 +50,8 @@ C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\Vi
 C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\View\DetailView2.baml
 C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\bin\Debug\Shipper.db
 C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\DTR.csprojAssemblyReference.cache
+C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\View\HomeView.g.cs
+C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\View\HomeView.baml
+C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\View\BillOfLandingView.g.cs
+C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\View\BillOfLandingView.baml
