@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DTR.View"
         xmlns:vm="clr-namespace:DTR.ViewModel"
         mc:Ignorable="d"
-        Title="BillOfLandingView" Height="450" Width="800">
+        Title="Bill Of Landing" Height="450" Width="800">
 
     <Window.Resources>
         <vm:BillOfLandingVM x:Key="vm"/>
@@ -54,7 +54,7 @@
 
             <!--Shipper Exporter R1 C1-->
             <TextBlock Grid.Row="1" Grid.Column="1"
-               Text="Shipper Exporter(Complete name and address)" />
+               Text="Shipper/Exporter" />
             <TextBox Text="{Binding ShipperExporter, Mode=TwoWay}" Grid.Row="2" Grid.Column="1"
                  x:Name="ShipperTextBox"
                  GotKeyboardFocus="ShipperTextBox_GotKeyboardFocus"
@@ -78,9 +78,9 @@
             </Popup>
 
             <!--Booking, Bill of Landing, and Export Reference # R1 C2-->
-            <Grid Grid.Row="1" Grid.Column="2" Grid.RowSpan="2">
+            <Grid Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" VerticalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
                     <!-- 0 -->
                     <ColumnDefinition Width="*" />
                     <!-- 1 -->
@@ -96,22 +96,26 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Grid.Column="0"
-               Text="Booking NO." />
-                <TextBox Text="{Binding BookingNumber}" Grid.Row="1" Grid.Column="0"/>
-                <TextBlock Grid.Row="0" Grid.Column="1"
-               Text="Bill of Landing NO." />
-                <TextBox Text="{Binding BillOfLanding}" Grid.Row="1" Grid.Column="1"/>
+               Text="Booking NO." Margin="0,5,0,5"
+                           HorizontalAlignment="Right"/>
+                <TextBox Text="{Binding BookingNumber}" Grid.Row="0" Grid.Column="1"
+                         Margin="0,5,0,5"/>
+                <TextBlock Grid.Row="1" Grid.Column="0"
+               Text="Ref NO." Margin="0,5,0,5" 
+                           HorizontalAlignment="Right"/>
+                <TextBox Text="{Binding BillOfLanding}" Grid.Row="1" Grid.Column="1"
+                         Margin="0,5,0,5"/>
 
-                <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
-               Text="Export Reference, FMC BOND NO." />
-                <TextBox Text="{Binding ExportRef}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                <TextBlock Grid.Row="2" Grid.Column="0" 
+               Text="Shipper Ref NO." Margin="0,5,0,5"/>
+                <TextBox Text="{Binding ExportRef}" Grid.Row="2" Grid.Column="1" 
                   TextWrapping="Wrap"
-                 AcceptsReturn="True"/>
+                  Margin="0,5,0,5"/>
             </Grid>
 
             <!--Cosignee R3 C1-->
             <TextBlock Grid.Row="3" Grid.Column="1"
-               Text="Cosignee (Complete name and address)" />
+               Text="Cosignee" />
             <TextBox Text="{Binding Cosignee, Mode=TwoWay}" Grid.Row="4" Grid.Column="1"
                  x:Name="CosigneeTextBox"
                  TextChanged="CosigneeTextBox_TextChanged"
@@ -147,19 +151,16 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Grid.Column="0"
-               Text="Forwarding Agent, FMC BOND NO." />
+               Text="Forwarding Agent- References" />
                 <TextBox Text="{Binding ForwardingAgent}" Grid.Row="1" Grid.Column="0"
                  TextWrapping="Wrap"
                  AcceptsReturn="True"/>
 
-                <TextBlock Grid.Row="2" Grid.Column="0"
-               Text="Point and Country of Origin of Goods" />
-                <TextBox Text="{Binding PointAndCountry}" Grid.Row="3" Grid.Column="0"/>
             </Grid>
 
             <!--Notify Party R5 C1-->
             <TextBlock Grid.Row="5" Grid.Column="1"
-               Text="Notify Party (Complete name and address)" />
+               Text="Notify Party" />
             <TextBox Text="{Binding Notify}" Grid.Row="6" Grid.Column="1"
                  Height="100" TextWrapping="Wrap"
                  AcceptsReturn="True"/>

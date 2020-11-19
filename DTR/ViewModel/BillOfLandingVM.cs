@@ -72,13 +72,6 @@ namespace DTR.ViewModel
             set { forwardingAgent = value; OnPropertyChanged("FowardingAgent"); }
         }
 
-        private string pointAndCountry;
-
-        public string PointAndCountry
-        {
-            get { return pointAndCountry; }
-            set { pointAndCountry = value; OnPropertyChanged("PointAndCountry"); }
-        }
 
         private string notify;
 
@@ -342,7 +335,7 @@ namespace DTR.ViewModel
             string path = System.AppDomain.CurrentDomain.BaseDirectory;
 
             PdfDocument outputDocument = new PdfDocument();
-            PdfDocument inputDocument = PdfReader.Open($"{path}/HBL2.pdf", PdfDocumentOpenMode.Modify);
+            PdfDocument inputDocument = PdfReader.Open($"{path}/BL2.pdf", PdfDocumentOpenMode.Modify);
 
             PdfPage page = inputDocument.Pages[0];
             XGraphics gfx = XGraphics.FromPdfPage(page);
@@ -384,12 +377,6 @@ namespace DTR.ViewModel
             if (ForwardingAgent != null)
             {
                 PlacePDF(320, 150, 275, 40, ForwardingAgent, gfx, textFormatter, font);
-            }
-
-            //Point and Country
-            if (PointAndCountry != null)
-            {
-                PlacePDF(320, 200, 275, 10, PointAndCountry, gfx, textFormatter, font);
             }
 
             //Notify
