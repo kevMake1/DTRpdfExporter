@@ -162,9 +162,11 @@
     <Compile Include="Model\Shipper.cs" />
     <Compile Include="ViewModel\AddCosigneeVM.cs" />
     <Compile Include="ViewModel\AddShipperVM.cs" />
+    <Compile Include="ViewModel\BillOfLandingVM.cs" />
     <Compile Include="ViewModel\Commands\AddCommand.cs" />
     <Compile Include="ViewModel\Commands\AddCosigneeCommand.cs" />
     <Compile Include="ViewModel\Commands\ExportCommand.cs" />
+    <Compile Include="ViewModel\Commands\ExportCommand2.cs" />
     <Compile Include="ViewModel\Commands\OpenCosigneeCommand.cs" />
     <Compile Include="ViewModel\Commands\OpenWindowCommand.cs" />
     <Compile Include="ViewModel\Commands\PrintCommand.cs" />

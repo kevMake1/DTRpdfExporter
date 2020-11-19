@@ -10,6 +10,8 @@ namespace DTR.ViewModel.Commands
 {
     public class ShowAllCommand : ICommand
     {
+        private BillOfLandingVM billOfLandingVM;
+
         public event EventHandler CanExecuteChanged;
 
         DTRInternationalVM DTRvm { get; set; }
@@ -18,6 +20,11 @@ namespace DTR.ViewModel.Commands
         public ShowAllCommand(DTRInternationalVM vm)
         {
             DTRvm = vm;
+        }
+
+        public ShowAllCommand(BillOfLandingVM billOfLandingVM)
+        {
+            this.billOfLandingVM = billOfLandingVM;
         }
 
         public bool CanExecute(object parameter)

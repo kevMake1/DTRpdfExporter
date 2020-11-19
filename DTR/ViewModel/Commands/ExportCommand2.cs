@@ -7,23 +7,20 @@ using System.Windows.Input;
 
 namespace DTR.ViewModel.Commands
 {
-
-    public class OpenCosigneeCommand : ICommand
+    public class ExportCommand2 : ICommand
     {
         private BillOfLandingVM billOfLandingVM;
 
         public event EventHandler CanExecuteChanged;
-        public DTRInternationalVM VM { get; set; }
 
-        public OpenCosigneeCommand(DTRInternationalVM vm)
+        public BillOfLandingVM VM { get; set; }
+        public ExportCommand2(BillOfLandingVM vm)
         {
             VM = vm;
         }
 
-        public OpenCosigneeCommand(BillOfLandingVM billOfLandingVM)
-        {
-            this.billOfLandingVM = billOfLandingVM;
-        }
+
+ 
 
         public bool CanExecute(object parameter)
         {
@@ -32,7 +29,7 @@ namespace DTR.ViewModel.Commands
 
         public void Execute(object parameter)
         {
-            VM.OpenCosigneeView();
+            VM.ExportToPdf();
         }
     }
 }

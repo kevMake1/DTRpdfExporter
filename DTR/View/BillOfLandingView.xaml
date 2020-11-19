@@ -4,9 +4,360 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DTR.View"
+        xmlns:vm="clr-namespace:DTR.ViewModel"
         mc:Ignorable="d"
         Title="BillOfLandingView" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+
+    <Window.Resources>
+        <vm:BillOfLandingVM x:Key="vm"/>
+    </Window.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid DataContext="{StaticResource vm}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <!-- 0 -->
+                <ColumnDefinition Width="*" />
+                <!-- 1 -->
+                <ColumnDefinition Width="*" />
+                <!-- 2 -->
+                <ColumnDefinition Width="20" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <!-- 0 -->
+                <RowDefinition Height="auto" />
+                <!-- 1 -->
+                <RowDefinition Height="auto" />
+                <!-- 2 -->
+                <RowDefinition Height="auto" />
+                <!-- 3 -->
+                <RowDefinition Height="auto" />
+                <!-- 4 -->
+                <RowDefinition Height="auto" />
+                <!-- 5 -->
+                <RowDefinition Height="auto" />
+                <!-- 6 -->
+                <RowDefinition Height="auto" />
+                <!-- 7 -->
+                <RowDefinition Height="auto" />
+                <!-- 8 -->
+                <RowDefinition Height="auto" />
+                <!-- 9 -->
+                <RowDefinition Height="auto" />
+                <!-- 10 -->
+                <RowDefinition Height="auto" />
+                <!-- 11 -->
+                <RowDefinition Height="*" />
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+
+            <!--Shipper Exporter R1 C1-->
+            <TextBlock Grid.Row="1" Grid.Column="1"
+               Text="Shipper Exporter(Complete name and address)" />
+            <TextBox Text="{Binding ShipperExporter, Mode=TwoWay}" Grid.Row="2" Grid.Column="1"
+                 x:Name="ShipperTextBox"
+                 GotKeyboardFocus="ShipperTextBox_GotKeyboardFocus"
+                 TextChanged="ShipperTextBox_TextChanged"
+                 Height="100" TextWrapping="Wrap"
+                 AcceptsReturn="True"/>
+            <Popup x:Name="popup" Width="350" Height="100" PlacementTarget="{Binding ElementName=ShipperTextBox}"
+            StaysOpen="{Binding ElementName=ShipperTextBox,Path=IsKeyboardFocused}"
+                   Closed="popup_Closed">
+                <ListView x:Name="ShipperView" 
+                  SelectionChanged="ShipperView_SelectionChanged"
+                  >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding ShipperInfo}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Popup>
+
+            <!--Booking, Bill of Landing, and Export Reference # R1 C2-->
+            <Grid Grid.Row="1" Grid.Column="2" Grid.RowSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <!-- 0 -->
+                    <ColumnDefinition Width="*" />
+                    <!-- 1 -->
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <!-- 0 -->
+                    <RowDefinition Height="auto" />
+                    <!-- 1 -->
+                    <RowDefinition Height="auto" />
+                    <!-- 2 -->
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0"
+               Text="Booking NO." />
+                <TextBox Text="{Binding BookingNumber}" Grid.Row="1" Grid.Column="0"/>
+                <TextBlock Grid.Row="0" Grid.Column="1"
+               Text="Bill of Landing NO." />
+                <TextBox Text="{Binding BillOfLanding}" Grid.Row="1" Grid.Column="1"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+               Text="Export Reference, FMC BOND NO." />
+                <TextBox Text="{Binding ExportRef}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                  TextWrapping="Wrap"
+                 AcceptsReturn="True"/>
+            </Grid>
+
+            <!--Cosignee R3 C1-->
+            <TextBlock Grid.Row="3" Grid.Column="1"
+               Text="Cosignee (Complete name and address)" />
+            <TextBox Text="{Binding Cosignee, Mode=TwoWay}" Grid.Row="4" Grid.Column="1"
+                 x:Name="CosigneeTextBox"
+                 TextChanged="CosigneeTextBox_TextChanged"
+                 Height="100" TextWrapping="Wrap"
+                 AcceptsReturn="True"/>
+
+            <Popup x:Name="popup2" Width="350" Height="100" PlacementTarget="{Binding ElementName=CosigneeTextBox}"
+            StaysOpen="{Binding ElementName=CosigneeTextBox,Path=IsKeyboardFocused}"
+                   Closed="popup2_Closed">
+                <ListView x:Name="CosigneeView" 
+                  SelectionChanged="CosigneeView_SelectionChanged"
+                  >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding CosigneeInfo}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Popup>
+
+            <!-- Forwarding Agent, Point and Country R3 C2-->
+            <Grid Grid.Row="3" Grid.Column="2" Grid.RowSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0"
+               Text="Forwarding Agent, FMC BOND NO." />
+                <TextBox Text="{Binding ForwardingAgent}" Grid.Row="1" Grid.Column="0"
+                 TextWrapping="Wrap"
+                 AcceptsReturn="True"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0"
+               Text="Point and Country of Origin of Goods" />
+                <TextBox Text="{Binding PointAndCountry}" Grid.Row="3" Grid.Column="0"/>
+            </Grid>
+
+            <!--Notify Party R5 C1-->
+            <TextBlock Grid.Row="5" Grid.Column="1"
+               Text="Notify Party (Complete name and address)" />
+            <TextBox Text="{Binding Notify}" Grid.Row="6" Grid.Column="1"
+                 Height="100" TextWrapping="Wrap"
+                 AcceptsReturn="True"/>
+
+            <!--Also Notify Party R5 C2-->
+            <TextBlock Grid.Row="5" Grid.Column="2"
+               Text="Also Notify: Routing and Instructions" />
+            <TextBox Text="{Binding AlsoNotify}" Grid.Row="6" Grid.Column="2"
+                 Height="100" TextWrapping="Wrap"
+                 AcceptsReturn="True"/>
+
+            <!--Initial Carriage by, etc R7-8 C1-->
+            <Grid Grid.Row="7" Grid.Column="1" Grid.RowSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0"
+               Text="Initial Carriage by (MODE)" />
+                <TextBox Text="{Binding InitialCarriage}" Grid.Row="1" Grid.Column="0"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0"
+               Text="Loading Vessel" />
+                <TextBox Text="{Binding LoadingVessel}" Grid.Row="3" Grid.Column="0"/>
+
+                <TextBlock Grid.Row="4" Grid.Column="0"
+               Text="Port of Discharge" />
+                <TextBox Text="{Binding PortOfDischarge}" Grid.Row="5" Grid.Column="0"/>
+
+                <TextBlock Grid.Row="0" Grid.Column="1"
+               Text="Place of Receipt" />
+                <TextBox Text="{Binding PlaceOfReceipt}" Grid.Row="1" Grid.Column="1"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="1"
+               Text="Port of Loading" />
+                <TextBox Text="{Binding PortOfLoading}" Grid.Row="3" Grid.Column="1"/>
+
+                <TextBlock Grid.Row="4" Grid.Column="1"
+               Text="Place of Delivery" />
+                <TextBox Text="{Binding PlaceOfDelivery}" Grid.Row="5" Grid.Column="1"/>
+
+            </Grid>
+
+            <!--Further Routing R7-8 C2-->
+            <TextBlock Grid.Row="7" Grid.Column="2"
+               Text="Further Routing (At merchant's risk and resposibility)" />
+            <TextBox Text="{Binding FurtherRouting}" Grid.Row="8" Grid.Column="2"
+                 Height="100" TextWrapping="Wrap"
+                 AcceptsReturn="True"/>
+
+
+            <TextBlock Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2"
+                   Text="Particulars Furnished By Shipper"
+                   FontWeight="Bold" HorizontalAlignment="Center"
+                   Margin="0, 10, 0, 6"/>
+
+            <!--Particular Furnished By Shipper-->
+            <Grid Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="150" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0"
+                       Text="MKS. and NOS." HorizontalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Grid.Column="1"
+                       Text="NO. of PKGS" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Grid.Column="2"
+                       Text="Description of Packages and Goods" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Grid.Column="3"
+                       Text="Gross Weight" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Grid.Column="4"
+                       Text="Measurement" HorizontalAlignment="Center"/>
+
+                <TextBox Text="{Binding Mks}" Grid.Row="1" Grid.Column="0" AcceptsReturn="True"/>
+                <TextBox Text="{Binding Pks}" Grid.Row="1" Grid.Column="1" AcceptsReturn= "True"/>
+                <TextBox Text="{Binding Description}" Grid.Row="1" Grid.Column="2" AcceptsReturn= "True"/>
+                <TextBox Text="{Binding GrossWeight}" Grid.Row="1" Grid.Column="3" AcceptsReturn= "True"/>
+                <TextBox Text="{Binding Mesurement}" Grid.Row="1" Grid.Column="4" AcceptsReturn= "True"/>
+            </Grid>
+
+
+            <!--Freight and Charge Payble at-->
+            <Grid Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,15,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="50" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0"
+                       Text="Freight and Charge Payable at" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Grid.Column="1"
+                       Text="Prepaid" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Grid.Column="2"
+                       Text="currency" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Grid.Column="3"
+                       Text="Collect" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Row="0" Grid.Column="4"
+                       Text="currency" HorizontalAlignment="Center"/>
+
+                <TextBox Text="{Binding Freight1}" Grid.Row="1" Grid.Column="0"/>
+                <TextBox Text="{Binding Prepaid1}" Grid.Row="1" Grid.Column="1"/>
+                <TextBox Text="{Binding Currency1, Mode=TwoWay}" Grid.Row="1" Grid.Column="2"/>
+                <TextBox Text="{Binding Collect1}" Grid.Row="1" Grid.Column="3"/>
+                <TextBox Text="{Binding Currency1, Mode=TwoWay}" Grid.Row="1" Grid.Column="4"/>
+
+                <TextBox Text="{Binding Freight2}" Grid.Row="2" Grid.Column="0"/>
+                <TextBox Text="{Binding Prepaid2}" Grid.Row="2" Grid.Column="1"/>
+                <TextBox Text="{Binding Currency2, Mode=TwoWay}" Grid.Row="2" Grid.Column="2"/>
+                <TextBox Text="{Binding Collect2}" Grid.Row="2" Grid.Column="3"/>
+                <TextBox Text="{Binding Currency2, Mode=TwoWay}" Grid.Row="2" Grid.Column="4"/>
+
+                <TextBox Text="{Binding Freight3}" Grid.Row="3" Grid.Column="0"/>
+                <TextBox Text="{Binding Prepaid3}" Grid.Row="3" Grid.Column="1"/>
+                <TextBox Text="{Binding Currency3, Mode=TwoWay}" Grid.Row="3" Grid.Column="2"/>
+                <TextBox Text="{Binding Collect3}" Grid.Row="3" Grid.Column="3"/>
+                <TextBox Text="{Binding Currency3, Mode=TwoWay}" Grid.Row="3" Grid.Column="4"/>
+
+                <TextBox Text="{Binding Freight4}" Grid.Row="4" Grid.Column="0"/>
+                <TextBox Text="{Binding Prepaid4}" Grid.Row="4" Grid.Column="1"/>
+                <TextBox Text="{Binding Currency4, Mode=TwoWay}" Grid.Row="4" Grid.Column="2"/>
+                <TextBox Text="{Binding Collect4}" Grid.Row="4" Grid.Column="3"/>
+                <TextBox Text="{Binding Currency4, Mode=TwoWay}" Grid.Row="4" Grid.Column="4"/>
+
+                <TextBox Text="{Binding Freight5}" Grid.Row="5" Grid.Column="0"/>
+                <TextBox Text="{Binding Prepaid5}" Grid.Row="5" Grid.Column="1"/>
+                <TextBox Text="{Binding Currency5, Mode=TwoWay}" Grid.Row="5" Grid.Column="2"/>
+                <TextBox Text="{Binding Collect5}" Grid.Row="5" Grid.Column="3"/>
+                <TextBox Text="{Binding Currency5, Mode=TwoWay}" Grid.Row="5" Grid.Column="4"/>
+
+                <!--Total-->
+                <TextBlock Grid.Row="6" Grid.Column="0"
+                           HorizontalAlignment="Right"
+                           Text="Total" FontWeight="Bold"/>
+                <TextBox Text="{Binding PrepaidTotal}" Grid.Row="6" Grid.Column="1"/>
+                <TextBox Text="{Binding CurrencyTotal}" Grid.Row="6" Grid.Column="2"/>
+                <TextBox Text="{Binding CollectTotal}" Grid.Row="6" Grid.Column="3"/>
+                <TextBox Text="{Binding CurrencyTotal}" Grid.Row="6" Grid.Column="4"/>
+            </Grid>
+
+            <Button Command="{Binding exportCommand}" Grid.Row="12" Grid.Column="2" 
+                    Content="Export"/>
+
+
+
+            <Grid Grid.Row="12" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <Button Command="{}" Grid.Row="0" Grid.Column="0" IsEnabled="False"
+                    Content="Add Shipper/Exporter" Margin="2,0,2,0"
+                        Click="AddShipperButton_Click"/>
+                <Button Command="{}" Grid.Row="0" Grid.Column="1" IsEnabled="False"
+                    Content="Add Cosignee" Margin="2,0,2,0"
+                        />
+                <Button Command="{}" Grid.Row="0" Grid.Column="2" IsEnabled="False"
+                    Content="Show All" Margin="2,0,2,0"
+                        />
+            </Grid>
+
+        </Grid>
+    </ScrollViewer>
 </Window>

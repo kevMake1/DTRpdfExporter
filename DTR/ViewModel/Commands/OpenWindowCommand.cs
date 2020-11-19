@@ -10,6 +10,8 @@ namespace DTR.ViewModel.Commands
 {
     public class OpenWindowCommand : ICommand
     {
+        private BillOfLandingVM billOfLandingVM;
+
         public event EventHandler CanExecuteChanged;
 
         public DTRInternationalVM DTRvm{ get; set; }
@@ -18,6 +20,11 @@ namespace DTR.ViewModel.Commands
         public OpenWindowCommand(DTRInternationalVM vm)
         {
             DTRvm = vm;
+        }
+
+        public OpenWindowCommand(BillOfLandingVM billOfLandingVM)
+        {
+            this.billOfLandingVM = billOfLandingVM;
         }
 
         public bool CanExecute(object parameter)
