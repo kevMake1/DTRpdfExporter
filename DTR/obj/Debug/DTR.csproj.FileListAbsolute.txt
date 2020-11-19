@@ -50,5 +50,3 @@ C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\Vi
 C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\obj\Debug\View\DetailView2.baml
 C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\bin\Debug\Shipper.db
 C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
-C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\bin\Debug\x64\e_sqlite3.dll
-C:\Users\KevaughnClarke\source\repos\MC Transport Softwares\DTR\DTR\bin\Debug\x86\e_sqlite3.dll

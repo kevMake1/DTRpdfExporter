@@ -9,13 +9,19 @@ namespace DTR.Model
 {
     public class Cosignee
     {
-        [PrimaryKey, AutoIncrement] //sqlite
+        //[PrimaryKey, AutoIncrement] //sqlite
         public int Id { get; set; }
         public string CosigneeInfo { get; set; }
 
         public override string ToString()
         {
             return $"{CosigneeInfo}";
+        }
+
+        public Cosignee(int id, string str)
+        {
+            Id = id;
+            CosigneeInfo = str;
         }
     }
 }

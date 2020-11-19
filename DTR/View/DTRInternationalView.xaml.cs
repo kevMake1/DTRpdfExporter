@@ -21,6 +21,11 @@ namespace DTR.View
     /// </summary>
     public partial class DTRInternationalView : Window
     {
+        //List<Shipper> shippers;
+        //List<Cosignee> cosignees;
+
+        Companies companies;
+
         List<Shipper> shippers;
         List<Cosignee> cosignees;
 
@@ -29,18 +34,17 @@ namespace DTR.View
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
 
-            shippers = new List<Shipper>();
-            cosignees = new List<Cosignee>();
+            companies = new Companies();
+
+            shippers = companies.shippers1;
+            cosignees = companies.cosignees1;
+
+            ReadShipperDatabase();
+
+            //shippers = new List<Shipper>();
+            //cosignees = new List<Cosignee>();
 
 
-            try
-            {
-                ReadShipperDatabase();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
-            }
             
             //ReadCosigneeDatabase();
 
@@ -54,15 +58,15 @@ namespace DTR.View
 
         void ReadShipperDatabase()
         {
-            string databaseName = "Shipper.db";
-            string folderPath = AppDomain.CurrentDomain.BaseDirectory;
-            string databasePath = System.IO.Path.Combine(folderPath, databaseName);
+            //string databaseName = "Shipper.db";
+            //string folderPath = AppDomain.CurrentDomain.BaseDirectory;
+            //string databasePath = System.IO.Path.Combine(folderPath, databaseName);
 
-            using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(databasePath))
-            {
-                conn.CreateTable<Shipper>();
-                shippers = conn.Table<Shipper>().ToList();
-            }
+            //using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(databasePath))
+            //{
+                //conn.CreateTable<Shipper>();
+                //shippers = conn.Table<Shipper>().ToList();
+            //}
 
             if (shippers != null)
             {
@@ -71,17 +75,17 @@ namespace DTR.View
         }
         void ReadCosigneeDatabase()
         {
-            string databaseName = "Cosignee.db";
-            string folderPath = AppDomain.CurrentDomain.BaseDirectory;
-            string databasePath = System.IO.Path.Combine(folderPath, databaseName);
+            //string databaseName = "Cosignee.db";
+            //string folderPath = AppDomain.CurrentDomain.BaseDirectory;
+            //string databasePath = System.IO.Path.Combine(folderPath, databaseName);
 
             
 
-            using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(databasePath))
-            {
-                conn.CreateTable<Cosignee>();
-                cosignees = conn.Table<Cosignee>().ToList();
-            }
+            //using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(databasePath))
+            //{
+                //conn.CreateTable<Cosignee>();
+                //cosignees = conn.Table<Cosignee>().ToList();
+            //}
 
             if (cosignees != null)
             {
@@ -123,12 +127,21 @@ namespace DTR.View
 
         private void CosigneeTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            //database
             popup2.IsOpen = true;
             TextBox searchTextBox = sender as TextBox;
 
             var filteredList = cosignees.Where(c => c.CosigneeInfo.Contains(searchTextBox.Text)).ToList();
 
             CosigneeView.ItemsSource = filteredList;
+
+            //database
+            //popup2.IsOpen = true;
+            //TextBox searchTextBox = sender as TextBox;
+
+            //var filteredList = cosignees.Where(c => c.CosigneeInfo.Contains(searchTextBox.Text)).ToList();
+
+            //CosigneeView.ItemsSource = filteredList;
         }
 
         private void popup_Closed(object sender, EventArgs e)

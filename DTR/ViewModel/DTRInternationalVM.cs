@@ -340,7 +340,7 @@ namespace DTR.ViewModel
 
         public void ExportToPdf()
         {
-            string path = AppDomain.CurrentDomain.BaseDirectory;
+            string path = System.AppDomain.CurrentDomain.BaseDirectory;
 
             PdfDocument outputDocument = new PdfDocument();
             PdfDocument inputDocument = PdfReader.Open($"{path}/HBL2.pdf", PdfDocumentOpenMode.Modify);

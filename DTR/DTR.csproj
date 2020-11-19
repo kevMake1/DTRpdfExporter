@@ -157,6 +157,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Companies.cs" />
     <Compile Include="Model\Cosignee.cs" />
     <Compile Include="Model\Shipper.cs" />
     <Compile Include="ViewModel\AddCosigneeVM.cs" />

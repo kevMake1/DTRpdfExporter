@@ -44,21 +44,21 @@ namespace DTR.ViewModel
             
             if(ShipperContent != null)
             {
-                Shipper shipper = new Shipper()
-                {
-                    ShipperInfo = ShipperContent
-                };
+                //Shipper shipper = new Shipper()
+                //{
+                  //  ShipperInfo = ShipperContent
+                //};
 
                 //Save to dataBase
                 string databaseName = "Shipper.db";
                 string folderPath = AppDomain.CurrentDomain.BaseDirectory;
                 string databasePath = System.IO.Path.Combine(folderPath, databaseName);
 
-                using (SQLiteConnection connection = new SQLiteConnection(databasePath))
-                {
-                    connection.CreateTable<Shipper>();
-                    connection.Insert(shipper);
-                }
+                //using (SQLiteConnection connection = new SQLiteConnection(databasePath))
+                //{
+                  //  connection.CreateTable<Shipper>();
+                    //connection.Insert(shipper);
+                //}
 
                 
                 

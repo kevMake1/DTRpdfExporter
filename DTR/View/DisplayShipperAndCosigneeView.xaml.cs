@@ -31,47 +31,50 @@ namespace DTR.View
 
 
             ReadShipperDatabase();
-            ReadCosigneeDatabase();
+            //ReadCosigneeDatabase();
         }
 
         void ReadShipperDatabase()
         {
-            string databaseName = "Shipper.db";
-            string folderPath = AppDomain.CurrentDomain.BaseDirectory;
-            string databasePath = System.IO.Path.Combine(folderPath, databaseName);
+            //string databaseName = "Shipper.db";
+            //string folderPath = AppDomain.CurrentDomain.BaseDirectory;
+            //string databasePath = System.IO.Path.Combine(folderPath, databaseName);
 
-            List<Shipper> shippers;
+            //List<Shipper> shippers;
 
-            using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(databasePath))
-            {
-                conn.CreateTable<Shipper>();
-                shippers = conn.Table<Shipper>().ToList();
-            }
+            //using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(databasePath))
+            //{
+            //  conn.CreateTable<Shipper>();
+            //shippers = conn.Table<Shipper>().ToList();
+            //}
 
-            if(shippers != null)
-            {
-                ShipperView.ItemsSource = shippers;
-            }
+            //if(shippers != null)
+            //{
+            //  ShipperView.ItemsSource = shippers;
+            //}
+
+            Companies companies = new Companies();
+            List<Shipper> shippers = companies.shippers1;
         }
 
         void ReadCosigneeDatabase()
         {
-            string databaseName = "Cosignee.db";
-            string folderPath = AppDomain.CurrentDomain.BaseDirectory;
-            string databasePath = System.IO.Path.Combine(folderPath, databaseName);
+            //string databaseName = "Cosignee.db";
+            //string folderPath = AppDomain.CurrentDomain.BaseDirectory;
+            //string databasePath = System.IO.Path.Combine(folderPath, databaseName);
 
-            List<Cosignee> cosignees;
+            //List<Cosignee> cosignees;
 
-            using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(databasePath))
-            {
-                conn.CreateTable<Cosignee>();
-                cosignees = conn.Table<Cosignee>().ToList();
-            }
+            //using (SQLite.SQLiteConnection conn = new SQLite.SQLiteConnection(databasePath))
+            //{
+              //  conn.CreateTable<Cosignee>();
+              //  cosignees = conn.Table<Cosignee>().ToList();
+            //}
 
-            if (cosignees != null)
-            {
-                CosigneeView.ItemsSource = cosignees;
-            }
+            //if (cosignees != null)
+            //{
+              //  CosigneeView.ItemsSource = cosignees;
+            //}
         }
 
         private void Shipper_SelectionChanged(object sender, SelectionChangedEventArgs e)

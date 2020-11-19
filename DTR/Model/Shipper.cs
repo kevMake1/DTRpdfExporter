@@ -9,13 +9,19 @@ namespace DTR.Model
 {
     public class Shipper
     {
-        [PrimaryKey, AutoIncrement] //sqlite
+        //[PrimaryKey, AutoIncrement] //sqlite
         public int Id { get; set; }
         public string ShipperInfo { get; set; }
 
         public override string ToString()
         {
             return $"{ShipperInfo}";
+        }
+
+        public Shipper(int id, string str)
+        {
+            Id = id;
+            ShipperInfo = str;
         }
     }
 }

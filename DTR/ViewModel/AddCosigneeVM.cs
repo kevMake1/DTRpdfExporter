@@ -37,27 +37,27 @@ namespace DTR.ViewModel
         public void AddCosignee()
         {
 
-            if (CosigneeContent != null)
-            {
-                Cosignee cosignee = new Cosignee()
-                {
-                    CosigneeInfo = CosigneeContent
-                };
+            //if (CosigneeContent != null)
+            //{
+              //  Cosignee cosignee = new Cosignee()
+               // {
+                 //   CosigneeInfo = CosigneeContent
+                //};
 
                 //Save to dataBase
                 string databaseName = "Cosignee.db";
                 string folderPath = AppDomain.CurrentDomain.BaseDirectory;
                 string databasePath = System.IO.Path.Combine(folderPath, databaseName);
 
-                using (SQLiteConnection connection = new SQLiteConnection(databasePath))
-                {
-                    connection.CreateTable<Cosignee>();
-                    connection.Insert(cosignee);
-                }
+                //using (SQLiteConnection connection = new SQLiteConnection(databasePath))
+                //{
+                  //  connection.CreateTable<Cosignee>();
+                    //connection.Insert(cosignee);
+                //}
 
 
 
-            }
+            //}
 
         }
     }

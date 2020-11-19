@@ -328,13 +328,13 @@
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
 
-                <Button Command="{}" Grid.Row="0" Grid.Column="0" 
+                <Button Command="{}" Grid.Row="0" Grid.Column="0" IsEnabled="False"
                     Content="Add Shipper/Exporter" Margin="2,0,2,0"
                         Click="AddShipperButton_Click"/>
-                <Button Command="{}" Grid.Row="0" Grid.Column="1" 
+                <Button Command="{}" Grid.Row="0" Grid.Column="1" IsEnabled="False"
                     Content="Add Cosignee" Margin="2,0,2,0"
                         Click="AddCosigneeButton_Click"/>
-                <Button Command="{}" Grid.Row="0" Grid.Column="2" 
+                <Button Command="{}" Grid.Row="0" Grid.Column="2" IsEnabled="False"
                     Content="Show All" Margin="2,0,2,0"
                         Click="ShowAllButton_Click"/>
             </Grid>
