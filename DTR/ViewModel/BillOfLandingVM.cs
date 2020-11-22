@@ -491,56 +491,56 @@ namespace DTR.ViewModel
             //Prepaid inputs
             if (Prepaid1 != null)
             {
-                PlacePDF(155, 629, 38, 10, Prepaid1, gfx, textFormatter, font);
+                PlacePDF(185, 625, 38, 10, Prepaid1, gfx, textFormatter, font);
             }
             if (Prepaid2 != null)
             {
-                PlacePDF(155, 642, 38, 10, Prepaid2, gfx, textFormatter, font);
+                PlacePDF(185, 642, 38, 10, Prepaid2, gfx, textFormatter, font);
             }
             if (Prepaid3 != null)
             {
-                PlacePDF(155, 656, 38, 10, Prepaid3, gfx, textFormatter, font);
+                PlacePDF(185, 656, 38, 10, Prepaid3, gfx, textFormatter, font);
             }
             if (Prepaid4 != null)
             {
-                PlacePDF(155, 670, 38, 10, Prepaid4, gfx, textFormatter, font);
+                PlacePDF(185, 670, 38, 10, Prepaid4, gfx, textFormatter, font);
             }
             if (Prepaid5 != null)
             {
-                PlacePDF(155, 684, 38, 10, Prepaid5, gfx, textFormatter, font);
+                PlacePDF(185, 684, 38, 10, Prepaid5, gfx, textFormatter, font);
             }
 
             //currency input
             if (Currency1 != null)
             {
-                PlacePDF(195, 629, 15, 10, Currency1, gfx, textFormatter, font);
-                PlacePDF(253, 629, 15, 10, Currency1, gfx, textFormatter, font);
+                PlacePDF(230, 625, 15, 10, Currency1, gfx, textFormatter, font);
+                PlacePDF(298, 625, 15, 10, Currency1, gfx, textFormatter, font);
             }
             if (Currency2 != null)
             {
-                PlacePDF(195, 642, 15, 10, Currency2, gfx, textFormatter, font);
-                PlacePDF(253, 642, 15, 10, Currency1, gfx, textFormatter, font);
+                PlacePDF(230, 642, 15, 10, Currency2, gfx, textFormatter, font);
+                PlacePDF(298, 642, 15, 10, Currency1, gfx, textFormatter, font);
             }
             if (Currency3 != null)
             {
-                PlacePDF(195, 656, 15, 10, Currency3, gfx, textFormatter, font);
-                PlacePDF(253, 656, 15, 10, Currency1, gfx, textFormatter, font);
+                PlacePDF(230, 656, 15, 10, Currency3, gfx, textFormatter, font);
+                PlacePDF(298, 656, 15, 10, Currency1, gfx, textFormatter, font);
             }
             if (Currency4 != null)
             {
-                PlacePDF(195, 670, 15, 10, Currency4, gfx, textFormatter, font);
-                PlacePDF(253, 670, 15, 10, Currency1, gfx, textFormatter, font);
+                PlacePDF(230, 670, 15, 10, Currency4, gfx, textFormatter, font);
+                PlacePDF(298, 670, 15, 10, Currency1, gfx, textFormatter, font);
             }
             if (Currency5 != null)
             {
-                PlacePDF(195, 684, 15, 10, Currency5, gfx, textFormatter, font);
-                PlacePDF(253, 684, 15, 10, Currency1, gfx, textFormatter, font);
+                PlacePDF(230, 684, 15, 10, Currency5, gfx, textFormatter, font);
+                PlacePDF(298, 684, 15, 10, Currency1, gfx, textFormatter, font);
             }
 
             //Collect input
             if (Collect1 != null)
             {
-                PlacePDF(215, 629, 35, 10, Collect1, gfx, textFormatter, font);
+                PlacePDF(275, 625, 35, 10, Collect1, gfx, textFormatter, font);
             }
             if (Collect2 != null)
             {
