@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DTR.View"
         xmlns:vm="clr-namespace:DTR.ViewModel"
         mc:Ignorable="d"
-        Title="Bill Of Landing" Height="450" Width="800">
+        Title="Bill Of Landing" Height="891.593" Width="800">
 
     <Window.Resources>
         <vm:BillOfLandingVM x:Key="vm"/>
@@ -16,7 +16,7 @@
         <Grid DataContext="{StaticResource vm}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="20" />
-                <!-- 0 -->
+                <!-- 0 450-->
                 <ColumnDefinition Width="*" />
                 <!-- 1 -->
                 <ColumnDefinition Width="*" />
@@ -167,7 +167,7 @@
 
             <!--Also Notify Party R5 C2-->
             <TextBlock Grid.Row="5" Grid.Column="2"
-               Text="Also Notify: Routing and Instructions" />
+               Text="Domestic Routing/Export Instructions" />
             <TextBox Text="{Binding AlsoNotify}" Grid.Row="6" Grid.Column="2"
                  Height="100" TextWrapping="Wrap"
                  AcceptsReturn="True"/>
@@ -188,20 +188,17 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Grid.Column="0"
-               Text="Initial Carriage by (MODE)" />
-                <TextBox Text="{Binding InitialCarriage}" Grid.Row="1" Grid.Column="0"/>
+               Text="Place of Receipt" />
+                <TextBox Text="{Binding InitialCarriage}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
 
                 <TextBlock Grid.Row="2" Grid.Column="0"
-               Text="Loading Vessel" />
+               Text="Exporting Carrier" />
                 <TextBox Text="{Binding LoadingVessel}" Grid.Row="3" Grid.Column="0"/>
 
                 <TextBlock Grid.Row="4" Grid.Column="0"
                Text="Port of Discharge" />
                 <TextBox Text="{Binding PortOfDischarge}" Grid.Row="5" Grid.Column="0"/>
 
-                <TextBlock Grid.Row="0" Grid.Column="1"
-               Text="Place of Receipt" />
-                <TextBox Text="{Binding PlaceOfReceipt}" Grid.Row="1" Grid.Column="1"/>
 
                 <TextBlock Grid.Row="2" Grid.Column="1"
                Text="Port of Loading" />
@@ -213,12 +210,7 @@
 
             </Grid>
 
-            <!--Further Routing R7-8 C2-->
-            <TextBlock Grid.Row="7" Grid.Column="2"
-               Text="Further Routing (At merchant's risk and resposibility)" />
-            <TextBox Text="{Binding FurtherRouting}" Grid.Row="8" Grid.Column="2"
-                 Height="100" TextWrapping="Wrap"
-                 AcceptsReturn="True"/>
+
 
 
             <TextBlock Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2"
@@ -263,7 +255,7 @@
             </Grid>
 
 
-            <!--Freight and Charge Payble at-->
+            <!--Ocean Freight Charges-->
             <Grid Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,15,0,10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -283,7 +275,7 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Grid.Column="0"
-                       Text="Freight and Charge Payable at" HorizontalAlignment="Center"/>
+                       Text="Ocean Freight Charges" HorizontalAlignment="Center"/>
                 <TextBlock Grid.Row="0" Grid.Column="1"
                        Text="Prepaid" HorizontalAlignment="Center"/>
                 <TextBlock Grid.Row="0" Grid.Column="2"
@@ -293,7 +285,7 @@
                 <TextBlock Grid.Row="0" Grid.Column="4"
                        Text="currency" HorizontalAlignment="Center"/>
 
-                <TextBox Text="{Binding Freight1}" Grid.Row="1" Grid.Column="0"/>
+                
                 <TextBox Text="{Binding Prepaid1}" Grid.Row="1" Grid.Column="1"/>
                 <TextBox Text="{Binding Currency1, Mode=TwoWay}" Grid.Row="1" Grid.Column="2"/>
                 <TextBox Text="{Binding Collect1}" Grid.Row="1" Grid.Column="3"/>
@@ -323,14 +315,7 @@
                 <TextBox Text="{Binding Collect5}" Grid.Row="5" Grid.Column="3"/>
                 <TextBox Text="{Binding Currency5, Mode=TwoWay}" Grid.Row="5" Grid.Column="4"/>
 
-                <!--Total-->
-                <TextBlock Grid.Row="6" Grid.Column="0"
-                           HorizontalAlignment="Right"
-                           Text="Total" FontWeight="Bold"/>
-                <TextBox Text="{Binding PrepaidTotal}" Grid.Row="6" Grid.Column="1"/>
-                <TextBox Text="{Binding CurrencyTotal}" Grid.Row="6" Grid.Column="2"/>
-                <TextBox Text="{Binding CollectTotal}" Grid.Row="6" Grid.Column="3"/>
-                <TextBox Text="{Binding CurrencyTotal}" Grid.Row="6" Grid.Column="4"/>
+                
             </Grid>
 
             <Button Command="{Binding exportCommand}" Grid.Row="12" Grid.Column="2" 
