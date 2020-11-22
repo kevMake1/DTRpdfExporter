@@ -346,25 +346,25 @@ namespace DTR.ViewModel
             //Shipper Exporter
             if (ShipperExporter != null)
             {
-                PlacePDF(20, 81, 290, 58, ShipperExporter, gfx, textFormatter, font);
+                PlacePDF(20, 71, 290, 58, ShipperExporter, gfx, textFormatter, font);
             }
 
             //Booking Number
             if (BookingNumber != null)
             {
-                PlacePDF(320, 81, 78, 10, BookingNumber, gfx, textFormatter, font);
+                PlacePDF(414, 73, 78, 10, BookingNumber, gfx, textFormatter, font);
             }
 
             //Bill of Landing
             if (BillOfLanding != null)
             {
-                PlacePDF(400, 81, 195, 10, BillOfLanding, gfx, textFormatter, font);
+                PlacePDF(414, 85, 195, 10, BillOfLanding, gfx, textFormatter, font);
             }
 
             //Export Reference
             if (ExportRef != null)
             {
-                PlacePDF(320, 100, 275, 40, ExportRef, gfx, textFormatter, font);
+                PlacePDF(414, 97, 275, 40, ExportRef, gfx, textFormatter, font);
             }
 
             //Cosignee

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DTR.View"
         xmlns:vm="clr-namespace:DTR.ViewModel"
         mc:Ignorable="d"
-        Title="Bill Of Landing" Height="891.593" Width="800">
+        Title="Bill Of Landing" Height="450" Width="800">
 
     <Window.Resources>
         <vm:BillOfLandingVM x:Key="vm"/>
@@ -16,7 +16,7 @@
         <Grid DataContext="{StaticResource vm}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="20" />
-                <!-- 0 450-->
+                <!-- 0 -->
                 <ColumnDefinition Width="*" />
                 <!-- 1 -->
                 <ColumnDefinition Width="*" />
