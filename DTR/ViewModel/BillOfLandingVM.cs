@@ -473,19 +473,19 @@ namespace DTR.ViewModel
             }
             if (Freight2 != null)
             {
-                PlacePDF(20, 642, 130, 10, Freight2, gfx, textFormatter, font);
+                PlacePDF(32, 642, 130, 10, Freight2, gfx, textFormatter, font);
             }
             if (Freight3 != null)
             {
-                PlacePDF(20, 656, 130, 10, Freight3, gfx, textFormatter, font);
+                PlacePDF(32, 656, 130, 10, Freight3, gfx, textFormatter, font);
             }
             if (Freight4 != null)
             {
-                PlacePDF(20, 670, 130, 10, Freight4, gfx, textFormatter, font);
+                PlacePDF(32, 670, 130, 10, Freight4, gfx, textFormatter, font);
             }
             if (Freight5 != null)
             {
-                PlacePDF(20, 684, 130, 10, Freight5, gfx, textFormatter, font);
+                PlacePDF(32, 684, 130, 10, Freight5, gfx, textFormatter, font);
             }
 
             //Prepaid inputs
