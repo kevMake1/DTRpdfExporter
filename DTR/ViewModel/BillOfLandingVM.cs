@@ -540,23 +540,23 @@ namespace DTR.ViewModel
             //Collect input
             if (Collect1 != null)
             {
-                PlacePDF(275, 625, 35, 10, Collect1, gfx, textFormatter, font);
+                PlacePDF(260, 625, 35, 10, Collect1, gfx, textFormatter, font);
             }
             if (Collect2 != null)
             {
-                PlacePDF(215, 642, 35, 10, Collect2, gfx, textFormatter, font);
+                PlacePDF(260, 642, 35, 10, Collect2, gfx, textFormatter, font);
             }
             if (Collect3 != null)
             {
-                PlacePDF(215, 656, 35, 10, Collect3, gfx, textFormatter, font);
+                PlacePDF(260, 656, 35, 10, Collect3, gfx, textFormatter, font);
             }
             if (Collect4 != null)
             {
-                PlacePDF(215, 670, 35, 10, Collect4, gfx, textFormatter, font);
+                PlacePDF(260, 670, 35, 10, Collect4, gfx, textFormatter, font);
             }
             if (Collect5 != null)
             {
-                PlacePDF(215, 684, 35, 10, Collect5, gfx, textFormatter, font);
+                PlacePDF(260, 684, 35, 10, Collect5, gfx, textFormatter, font);
             }
 
             //Total
