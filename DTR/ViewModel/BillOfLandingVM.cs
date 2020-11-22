@@ -370,43 +370,43 @@ namespace DTR.ViewModel
             //Cosignee
             if (Cosignee != null)
             {
-                PlacePDF(20, 150, 290, 58, Cosignee, gfx, textFormatter, font);
+                PlacePDF(20, 147, 290, 58, Cosignee, gfx, textFormatter, font);
             }
 
             //Forwarding 
             if (ForwardingAgent != null)
             {
-                PlacePDF(320, 150, 275, 40, ForwardingAgent, gfx, textFormatter, font);
+                PlacePDF(326, 148, 275, 40, ForwardingAgent, gfx, textFormatter, font);
             }
 
             //Notify
             if (Notify != null)
             {
-                PlacePDF(20, 225, 290, 58, Notify, gfx, textFormatter, font);
+                PlacePDF(20, 226, 290, 58, Notify, gfx, textFormatter, font);
             }
 
             //Point and Country
             if (AlsoNotify != null)
             {
-                PlacePDF(320, 225, 275, 58, AlsoNotify, gfx, textFormatter, font);
+                PlacePDF(326, 228, 275, 58, AlsoNotify, gfx, textFormatter, font);
             }
 
             //Initial Carriage
             if (InitialCarriage != null)
             {
-                PlacePDF(20, 296, 150, 10, InitialCarriage, gfx, textFormatter, font);
+                PlacePDF(20, 306, 150, 10, InitialCarriage, gfx, textFormatter, font);
             }
 
             //Loading Vessel
             if (LoadingVessel != null)
             {
-                PlacePDF(20, 319, 150, 10, LoadingVessel, gfx, textFormatter, font);
+                PlacePDF(20, 337, 150, 10, LoadingVessel, gfx, textFormatter, font);
             }
 
             //Port of Discharge
             if (PortOfDischarge != null)
             {
-                PlacePDF(20, 340, 150, 10, PortOfDischarge, gfx, textFormatter, font);
+                PlacePDF(20, 368, 150, 10, PortOfDischarge, gfx, textFormatter, font);
             }
 
             //Place of Receipt
@@ -418,13 +418,13 @@ namespace DTR.ViewModel
             //Port of Loading
             if (PortOfLoading != null)
             {
-                PlacePDF(172, 319, 145, 10, PortOfLoading, gfx, textFormatter, font);
+                PlacePDF(183, 337, 145, 10, PortOfLoading, gfx, textFormatter, font);
             }
 
             //Place of Delivery
             if (PlaceOfDelivery != null)
             {
-                PlacePDF(172, 340, 145, 10, PlaceOfDelivery, gfx, textFormatter, font);
+                PlacePDF(183, 368, 145, 10, PlaceOfDelivery, gfx, textFormatter, font);
             }
 
 
