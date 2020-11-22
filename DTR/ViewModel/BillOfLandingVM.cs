@@ -438,31 +438,31 @@ namespace DTR.ViewModel
             //Mks
             if (Mks != null)
             {
-                PlacePDF(16, 387, 100, 150, Mks, gfx, textFormatter, font);
+                PlacePDF(22, 420, 100, 150, Mks, gfx, textFormatter, font);
             }
 
             //Pks
             if (Pks != null)
             {
-                PlacePDF(121, 387, 45, 150, Pks, gfx, textFormatter, font);
+                PlacePDF(128, 420, 45, 150, Pks, gfx, textFormatter, font);
             }
 
             //Description
             if (Description != null)
             {
-                PlacePDF(170, 387, 270, 150, Description, gfx, textFormatter, font);
+                PlacePDF(200, 420, 270, 150, Description, gfx, textFormatter, font);
             }
 
             //GrossWeight
             if (GrossWeight != null)
             {
-                PlacePDF(448, 387, 73, 150, GrossWeight, gfx, textFormatter, font);
+                PlacePDF(440, 420, 73, 150, GrossWeight, gfx, textFormatter, font);
             }
 
             //Mesurment
             if (Mesurement != null)
             {
-                PlacePDF(528, 387, 58, 150, Mesurement, gfx, textFormatter, font);
+                PlacePDF(518, 420, 58, 150, Mesurement, gfx, textFormatter, font);
             }
 
             //Payment table -------------------------------------------------------------------------------------------------------------------
