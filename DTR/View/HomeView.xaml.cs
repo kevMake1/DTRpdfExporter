@@ -22,6 +22,7 @@ namespace DTR.View
         public HomeView()
         {
             InitializeComponent();
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
 
         private void DTRButton_Click(object sender, RoutedEventArgs e)
